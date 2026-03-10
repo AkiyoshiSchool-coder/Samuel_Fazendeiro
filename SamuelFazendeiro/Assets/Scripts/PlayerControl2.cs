@@ -35,10 +35,12 @@ public class PlayerControl2 : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.y);
         }
         // dispara comida ao pressionar barra de espa�o
-        if (shootAction.WasPressedThisFrame())
-        {
-            Instantiate(projectilePrefab, transform.position + new Vector3(0,2f,0), projectilePrefab.transform.rotation);
-        }
+        ShootAct();
+        PauseGame();
+        SoundAct();
+    }
+    private void PauseGame()
+    {
         if(pauseAction.WasPressedThisFrame())
         {
             InputActions.FindActionMap("Player").Disable();
@@ -51,8 +53,20 @@ public class PlayerControl2 : MonoBehaviour
             InputActions.FindActionMap("Player").Enable();
             UiDisable();
         }
-
-        
+    }
+    private void ShootAct()
+    {
+        if (shootAction.WasPressedThisFrame())
+        {
+            Instantiate(projectilePrefab, transform.position + new Vector3(0,2f,0), projectilePrefab.transform.rotation);
+        }
+    }
+    private void SoundAct()
+    {
+        if(soundAction.WasPressedThisFrame())
+        {
+            Instantiate(Soundmuel, transform.position, Soundmuel.transform.rotation);
+        }
     }
     private void UiEnable()
     {

@@ -28,7 +28,7 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "6c2ab1b8-8984-453a-af3d-a3c78ae1679a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -486,7 +486,7 @@
                 {
                     "name": "",
                     "id": "227f5533-ca51-4448-b7c5-1c0c8f8e4137",
-                    "path": "<Keyboard>/m",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -1022,7 +1022,7 @@
                 {
                     "name": "",
                     "id": "c65061ac-8368-4b56-a3b1-f917aed2e5e3",
-                    "path": "<Keyboard>/m",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
