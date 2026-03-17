@@ -5,13 +5,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerControl2 : MonoBehaviour
 {
+    //Variáveis
     public float speed = 20f;
-        public float xRange = 25f;
+    public float xRange = 25f;
+
+    private Ghosting ghost;
+
     public GameObject projectilePrefab;
     public GameObject PauseMenu;
     public GameObject Soundmuel;
     
-
     public InputActionAsset InputActions;
     private InputAction moveAction;
     private InputAction shootAction;
@@ -37,7 +40,7 @@ public class PlayerControl2 : MonoBehaviour
         // dispara comida ao pressionar barra de espa�o
         ShootAct();
         PauseGame();
-        SoundAct();
+       // SoundAct();
     }
     private void PauseGame()
     {
@@ -63,7 +66,7 @@ public class PlayerControl2 : MonoBehaviour
     }
     private void SoundAct()
     {
-        if(soundAction.WasPressedThisFrame())
+        if(soundAction.WasPressedThisFrame() && ghost.ghosting == true)
         {
             Instantiate(Soundmuel, transform.position, Soundmuel.transform.rotation);
         }
@@ -90,9 +93,12 @@ public class PlayerControl2 : MonoBehaviour
         PauseMenu.SetActive(false);
         moveAction = InputSystem.actions.FindAction("Move");
         shootAction = InputSystem.actions.FindAction("Jump");
-        soundAction = InputSystem.actions.FindAction("Attack");
+        soundAction = InputSystem.actions.FindAction("Interact");
         pauseAction = InputSystem.actions.FindAction("Pause");
         pauseActionM = InputSystem.actions.FindAction("Unpause");
+        ghost = gameObject.GetComponent<Ghosting>();
+        InputActions.FindActionMap("UI").Disable();
+        InputActions.FindActionMap("Player").Enable();        
         
     }
 
