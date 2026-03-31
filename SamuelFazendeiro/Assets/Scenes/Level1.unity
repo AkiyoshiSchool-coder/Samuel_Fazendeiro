@@ -1204,7 +1204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31de8eb0c9b497346a9eda389556499e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  vida: 0
+  vida: 3
   pontos: 0
 --- !u!1 &992285705
 GameObject:
