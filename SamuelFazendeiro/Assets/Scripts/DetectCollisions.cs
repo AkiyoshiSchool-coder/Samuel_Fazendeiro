@@ -5,20 +5,27 @@ using UnityEngine;
 public class DetectCollisions : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject Player;
+    public PlayerStats playerstats;
 
-    // Update is called once per frame
-    void Update()
+    private void start()
     {
         
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-        Destroy(other.gameObject);
+        Player = GameObject.Find("Player");
+        playerstats = Player.GetComponent<PlayerStats>();
+        if(!other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
+        if(gameObject.tag == "animal" && other.tag == "Player")
+        {
+            playerstats.LifeCalc(-1);
+            Destroy(gameObject);
+        }
     }
 }
