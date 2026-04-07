@@ -8,6 +8,7 @@ public class PlayerControl2 : MonoBehaviour
     //Variáveis
     public float speed = 20f;
     public float xRange = 25f;
+    public PlayerStats playerstats;
 
     private Ghosting ghost;
 
@@ -89,6 +90,7 @@ public class PlayerControl2 : MonoBehaviour
     }
     private void Awake()
     {
+        playerstats = GetComponent<PlayerStats>();
         PauseMenu = GameObject.Find("pauseMenu");
         PauseMenu.SetActive(false);
         moveAction = InputSystem.actions.FindAction("Move");
@@ -100,6 +102,14 @@ public class PlayerControl2 : MonoBehaviour
         InputActions.FindActionMap("UI").Disable();
         InputActions.FindActionMap("Player").Enable();        
         
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "animal" && gameObject.tag == "Player" && !ghost.ghosting)
+        {
+            playerstats.LifeCalc(-1);
+            Destroy(other.gameObject);
+        }
     }
 
     // public void MoveEvent(InputAction.CallbackContext context)

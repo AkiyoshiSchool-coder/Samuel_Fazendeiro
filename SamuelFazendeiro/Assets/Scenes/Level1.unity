@@ -228,10 +228,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 121342764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 19}
-  m_SizeDelta: {x: 123.2383, y: 123.23828}
+  m_AnchorMin: {x: 1, y: 0.448}
+  m_AnchorMax: {x: 1, y: 0.448}
+  m_AnchoredPosition: {x: -100, y: 75}
+  m_SizeDelta: {x: 123.2383, y: 124.23828}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &109624124
 MonoBehaviour:
@@ -1124,6 +1124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControl2
   speed: 20
   xRange: 15
+  playerstats: {fileID: 0}
   projectilePrefab: {fileID: 3368550998252044939, guid: 3e72a3cfb85b1344ca8ceae8fa56d1d4, type: 3}
   PauseMenu: {fileID: 2138785001}
   Soundmuel: {fileID: 8985225543046358615, guid: 7b16f0e92fef0cc4eb43aa6e9c13db84, type: 3}
@@ -1429,11 +1430,11 @@ RectTransform:
   - {fileID: 1367808499}
   m_Father: {fileID: 121342764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -580, y: 390}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 453, y: -100}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1260630731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,6 +1449,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StatsManager
   Player: {fileID: 981019821}
   playerstats: {fileID: 0}
+  vida1: {fileID: 29822882}
+  vida2: {fileID: 1127217153}
+  vida3: {fileID: 1367808498}
 --- !u!1 &1367808498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,11 +1851,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 29822883}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1761695641
 PrefabInstance:
   m_ObjectHideFlags: 0

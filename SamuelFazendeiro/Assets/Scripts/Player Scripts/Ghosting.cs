@@ -30,6 +30,7 @@ public class Ghosting : MonoBehaviour
             ghosting = true;
             Player.SetActive(false);
             StartCoroutine(Coroutine);
+            
         }
         /*
         else if(ghostAction.WasPressedThisFrame() && ghosting)
@@ -46,7 +47,6 @@ public class Ghosting : MonoBehaviour
 
     private IEnumerator temporizador(float ghostTime)
     {
-        Debug.Log("samuel");
         yield return new WaitForSeconds(ghostTime);
         ghosting = false;
         Player.SetActive(true);
