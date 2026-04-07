@@ -1,4 +1,6 @@
 using UnityEngine;
+using TMPro;
+using System;
 
 public class StatsManager : MonoBehaviour
 {
@@ -6,6 +8,7 @@ public class StatsManager : MonoBehaviour
     public GameObject Player;
     public PlayerStats playerstats;
     public GameObject vida1,vida2,vida3;
+    public TextMeshProUGUI texto;
     void Start()
     {
         playerstats = Player.GetComponent<PlayerStats>();        
@@ -15,29 +18,24 @@ public class StatsManager : MonoBehaviour
     void Update()
     {
         Life();
+        Points();
     }
 
     void Life()
     {
-        if(playerstats.vida == 3)
-        {
-            vida1.SetActive(true);
-            vida2.SetActive(true);
-            vida3.SetActive(true);
-        }
-
         if(playerstats.vida == 2)
         {
-            vida1.SetActive(true);
-            vida2.SetActive(true);
             vida3.SetActive(false);
         }
 
         if(playerstats.vida == 1)
         {
-            vida1.SetActive(true);
             vida2.SetActive(false);
-            vida3.SetActive(false);
         }
     }
+    void Points()
+    {
+        texto.text =  "Pontos: " + playerstats.pontos.ToString();
+    }
+
 }
