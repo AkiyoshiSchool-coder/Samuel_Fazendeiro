@@ -47,14 +47,14 @@ public class PlayerControl2 : MonoBehaviour
     {
         if(pauseAction.WasPressedThisFrame())
         {
-            InputActions.FindActionMap("Player").Disable();
+            Time.timeScale = 0;
             InputActions.FindActionMap("UI").Enable();
             UiEnable();
         }
         if(pauseActionM.WasPressedThisFrame())
         {
             InputActions.FindActionMap("UI").Disable();
-            InputActions.FindActionMap("Player").Enable();
+            Time.timeScale = 1f;
             UiDisable();
         }
     }

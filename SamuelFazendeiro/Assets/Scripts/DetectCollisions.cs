@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class DetectCollisions : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject Player;
-    public PlayerStats playerstats;
-
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!other.CompareTag("Player"))
+        if(other.CompareTag("animal"))
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
