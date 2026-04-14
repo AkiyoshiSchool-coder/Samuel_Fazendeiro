@@ -6,6 +6,7 @@ public class SceneCOntroler : MonoBehaviour
 {
     public String cena;
     public GameObject Options;
+    public GameObject ConfLeave;
     public void Jogar()
     {
         SceneManager.LoadScene(cena);
@@ -17,6 +18,14 @@ public class SceneCOntroler : MonoBehaviour
     public void OptionsClose()
     {
         Options.SetActive(false);
+    }
+    public void ConfSair()
+    {
+        ConfLeave.SetActive(true);
+    }
+    public void UnConfSair()
+    {
+        ConfLeave.SetActive(false);
     }
     public void Sair()
     {

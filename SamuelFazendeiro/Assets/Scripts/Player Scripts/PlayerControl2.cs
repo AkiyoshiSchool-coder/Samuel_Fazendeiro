@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerControl2 : MonoBehaviour
 {
     //Variáveis
-    public float speed = 20f;
-    public float xRange = 25f;
+    public float speed;
+    public float xRange;
     public PlayerStats playerstats;
 
     private Ghosting ghost;
@@ -32,11 +32,11 @@ public class PlayerControl2 : MonoBehaviour
         // mant�m o player dentro dos limites do jogo (eixo x)
         if (transform.position.x < -xRange)
         {
-            transform.position = new Vector3(-xRange, transform.position.y, transform.position.y);
+            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
         }
         if (transform.position.x > xRange)
         {
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.y);
+            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
         // dispara comida ao pressionar barra de espa�o
         ShootAct();
