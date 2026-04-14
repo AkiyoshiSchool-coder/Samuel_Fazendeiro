@@ -39,7 +39,7 @@ public class MoveForward : MonoBehaviour
     {
         if(!samUiMap.enabled)
         {
-            if(gameObject.CompareTag("pizza") && Teleguiada)
+            if(gameObject.CompareTag("pizzaMark") && Teleguiada)
             {
                 transform.position = Vector3.MoveTowards(transform.position,AnimalPos,step);
                 animator.speed = 1;
@@ -70,12 +70,13 @@ public class MoveForward : MonoBehaviour
     {
         if(other.CompareTag("animal") && gameObject.CompareTag("pizza"))
         {
+            gameObject.tag = "pizzaMark";
             AnimalPos = other.transform.position;
         }
     }
     private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("animal") && gameObject.CompareTag("pizza"))
+        if(other.CompareTag("animal") && gameObject.CompareTag("pizzaMark"))
         {
             AnimalPos = other.transform.position;
         }
