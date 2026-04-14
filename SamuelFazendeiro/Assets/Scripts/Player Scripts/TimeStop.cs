@@ -15,11 +15,13 @@ public class TimeStop : MonoBehaviour
 
     public GameObject SpawnManager;
     private SpawnManager spawnManager;
+    private Homing homing;
 
     void Awake()
     {
         spawnManager = SpawnManager.GetComponent<SpawnManager>();
         interactAction = InputSystem.actions.FindAction("Attack");
+        homing = GetComponent<Homing>();
         painel.SetActive(false);
         Coroutine = temporizador();
     }
@@ -27,7 +29,7 @@ public class TimeStop : MonoBehaviour
 
     void Update()
     {
-        if(interactAction.WasPressedThisFrame() && cooldown)
+        if(interactAction.WasPressedThisFrame() && cooldown && !homing.homing)
         {
             TimeStoping();
         }
