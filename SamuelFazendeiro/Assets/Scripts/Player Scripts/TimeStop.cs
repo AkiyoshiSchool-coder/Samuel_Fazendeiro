@@ -20,7 +20,7 @@ public class TimeStop : MonoBehaviour
     void Awake()
     {
         spawnManager = SpawnManager.GetComponent<SpawnManager>();
-        interactAction = InputSystem.actions.FindAction("Attack");
+        interactAction = InputSystem.actions.FindAction("TimeStop");
         homing = GetComponent<Homing>();
         painel.SetActive(false);
         Coroutine = temporizador();
