@@ -15,6 +15,8 @@ public class Homing : MonoBehaviour
     private InputAction homingAction;
     private PlayerControl2 playercontrol;
     private TimeStop timestop;
+
+    public GameObject blablabla;
     
     void Awake()
     {
@@ -28,13 +30,17 @@ public class Homing : MonoBehaviour
     {
         Coroutine = TeleTime();
         if(homingAction.WasPressedThisFrame() && cooldown && !timestop.timeStomped)
+        {
         Teleguiar();
+       // blablabla.SetActive(true);
+        }
     }
     private IEnumerator TeleTime()
     {
         homing = true;
         playercontrol.teleguiar = true;
         yield return new WaitForSeconds(5);
+        //blablabla.SetActive(false);
         playercontrol.teleguiar = false;
         homing = false;
         cooldown = false;

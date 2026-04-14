@@ -27,6 +27,8 @@ public class PlayerControl2 : MonoBehaviour
 
     private InputAction pauseAction;
     private InputAction pauseActionM;
+    public GameObject blablabla;
+    
 
     void Update()
     {

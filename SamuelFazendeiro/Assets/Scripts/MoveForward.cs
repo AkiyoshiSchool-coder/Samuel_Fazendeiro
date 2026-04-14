@@ -18,7 +18,8 @@ public class MoveForward : MonoBehaviour
 
 
     public float speed = 20f;
-    public float step;
+    public float stepEd;
+    public float stepBuild;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +42,11 @@ public class MoveForward : MonoBehaviour
         {
             if(gameObject.CompareTag("pizzaMark") && Teleguiada)
             {
-                transform.position = Vector3.MoveTowards(transform.position,AnimalPos,step);
+                #if UNITY_EDITOR
+                transform.position = Vector3.MoveTowards(transform.position,AnimalPos,stepEd);
+                #else
+                transform.position = Vector3.MoveTowards(transform.position,AnimalPos,stepEd);
+                #endif
                 animator.speed = 1;
             }
             transform.Translate(Vector3.forward * speed * Time.deltaTime);

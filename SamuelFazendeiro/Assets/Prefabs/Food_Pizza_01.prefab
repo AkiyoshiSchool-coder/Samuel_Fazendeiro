@@ -120,7 +120,8 @@ MonoBehaviour:
   AnimalPos: {x: 0, y: 0, z: 0}
   Teleguiada: 0
   speed: 20
-  step: 0.05
+  stepEd: 0.05
+  stepBuild: 300
 --- !u!114 &1200543877356693765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,5 +237,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.5, y: 0.13234863, z: 4}
+  m_Size: {x: 4, y: 0.13234863, z: 4}
   m_Center: {x: 0, y: 0, z: -0.0000001937151}
