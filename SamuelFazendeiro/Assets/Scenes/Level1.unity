@@ -1626,6 +1626,7 @@ MonoBehaviour:
   vida2: {fileID: 1127217153}
   vida3: {fileID: 1367808498}
   texto: {fileID: 2033867186}
+  level: Derrota
 --- !u!1 &1260925842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,7 +1661,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -17.2305, y: 0}
+  m_AnchoredPosition: {x: -17.230469, y: 0}
   m_SizeDelta: {x: 1065.428, y: 531.9399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1260925844

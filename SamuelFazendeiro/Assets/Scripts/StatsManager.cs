@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class StatsManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class StatsManager : MonoBehaviour
     public PlayerStats playerstats;
     public GameObject vida1,vida2,vida3;
     public TextMeshProUGUI texto;
+    public string level;
     void Start()
     {
         playerstats = Player.GetComponent<PlayerStats>();        
@@ -31,6 +33,10 @@ public class StatsManager : MonoBehaviour
         if(playerstats.vida == 1)
         {
             vida2.SetActive(false);
+        }
+        if(playerstats.vida <= 0)
+        {
+            SceneManager.LoadScene(level);
         }
     }
     void Points()
