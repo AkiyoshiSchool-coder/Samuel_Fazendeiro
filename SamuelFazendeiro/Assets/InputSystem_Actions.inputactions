@@ -106,7 +106,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "TimeStop",
+                    "name": "Homing",
                     "type": "Button",
                     "id": "bf42a35e-b5e8-4c7a-92d9-ebabba0b66d1",
                     "expectedControlType": "",
@@ -537,11 +537,22 @@
                 {
                     "name": "",
                     "id": "38b7cc09-c137-493a-bc62-475743413347",
-                    "path": "",
+                    "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "TimeStop",
+                    "action": "Homing",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6a621594-61da-40b7-a905-151e7d8b7db2",
+                    "path": "<Keyboard>/u",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Homing",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

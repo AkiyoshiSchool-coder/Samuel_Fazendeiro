@@ -8,13 +8,17 @@ public class PlayerControl2 : MonoBehaviour
     //Variáveis
     public float speed;
     public float xRange;
+    public int PizzaC;
+    public bool teleguiar;
     public PlayerStats playerstats;
+    public MoveForward pizzaMove;
 
     private Ghosting ghost;
 
     public GameObject projectilePrefab;
     public GameObject PauseMenu;
     public GameObject Soundmuel;
+    public GameObject PizzaUnit;
     
     public InputActionAsset InputActions;
     private InputAction moveAction;
@@ -62,7 +66,8 @@ public class PlayerControl2 : MonoBehaviour
     {
         if (shootAction.WasPressedThisFrame())
         {
-            Instantiate(projectilePrefab, transform.position + new Vector3(0,2f,0), projectilePrefab.transform.rotation);
+            PizzaUnit = Instantiate(projectilePrefab, transform.position + new Vector3(0,2f,0), projectilePrefab.transform.rotation);
+            
         }
     }
     private void SoundAct()
@@ -105,12 +110,34 @@ public class PlayerControl2 : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "animal" && gameObject.tag == "Player" && !ghost.ghosting)
+        if(other.CompareTag("animal") && gameObject.CompareTag("Player") && !ghost.ghosting)
         {
             playerstats.LifeCalc(-1);
             Destroy(other.gameObject);
         }
+
+        if(other.CompareTag("pizza") && teleguiar)
+        {
+            pizzaMove = PizzaUnit.GetComponent<MoveForward>();
+            pizzaMove.Teleguiada = true;
+        }
     }
+    // public void AtivarTeleg()
+    // {
+    //     foreach(int i  in PizzaCount)
+    //     {
+    //         pizzaMove = PizzaUnit.GetComponent<MoveForward>();
+    //         pizzaMove.Teleguiada = true;
+    //     }
+    // }
+    // public void DesativarTeleg()
+    // {
+    //     foreach(int i in PizzaCount)
+    //     {
+    //         pizzaMove = PizzaUnit.GetComponent<MoveForward>();
+    //         pizzaMove.Teleguiada = false;
+    //     }
+    // }
 
     // public void MoveEvent(InputAction.CallbackContext context)
     // {

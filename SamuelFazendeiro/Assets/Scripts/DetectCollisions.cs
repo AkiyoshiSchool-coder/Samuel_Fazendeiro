@@ -13,9 +13,9 @@ public class DetectCollisions : MonoBehaviour
         Player = GameObject.Find("Player");
         playerstats = Player.GetComponent<PlayerStats>();
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if(other.CompareTag("animal"))
+        if(other.gameObject.CompareTag("animal"))
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
