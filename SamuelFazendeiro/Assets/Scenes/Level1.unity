@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6054891c18820d34792c3dbd522d2017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneCOntroler
-  cena: Menu
+  cena: menu
   Options: {fileID: 0}
   ConfLeave: {fileID: 0}
 --- !u!1 &170076733
@@ -1491,8 +1491,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sair
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2805,8 +2805,8 @@ Transform:
   m_GameObject: {fileID: 2139283123}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 4.28, z: 2.01}
-  m_LocalScale: {x: 2, y: 0.1, z: 1.5}
+  m_LocalPosition: {x: 0, y: 4.28, z: 1.03}
+  m_LocalScale: {x: 1, y: 0.1, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 981019827}
