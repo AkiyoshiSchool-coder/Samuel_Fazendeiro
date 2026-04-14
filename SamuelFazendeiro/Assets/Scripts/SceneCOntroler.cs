@@ -6,19 +6,19 @@ public class SceneCOntroler : MonoBehaviour
 {
     public String cena;
     public GameObject Options;
-    void Jogar()
+    public void Jogar()
     {
         SceneManager.LoadScene(cena);
     }
-    void OptionsOpen()
+    public void OptionsOpen()
     {
         Options.SetActive(true);
     }
-    void OptionsClose()
+    public void OptionsClose()
     {
         Options.SetActive(false);
     }
-    void Sair()
+    public void Sair()
     {
         
         #if UNITY_EDITOR
