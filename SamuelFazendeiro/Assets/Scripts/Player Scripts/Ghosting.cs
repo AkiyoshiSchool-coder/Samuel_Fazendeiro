@@ -9,10 +9,12 @@ public class Ghosting : MonoBehaviour
     // Variáveis;
     public bool ghosting = false;
     public float timer;
+    public float timerLimit;
     public InputActionAsset InputActions;
     public GameObject Player;
     private InputAction ghostAction;
     private IEnumerator Coroutine;
+    private IEnumerator Cooldown;
     // Update is called once per frame
     void Start()
     {
@@ -25,12 +27,31 @@ public class Ghosting : MonoBehaviour
     }
     private void ghostAct()
     {
-        if(ghostAction.WasPressedThisFrame() && !ghosting)
+        if(ghostAction.WasPressedThisFrame() && !ghosting && timerLimit> 0)
         {
             ghosting = true;
             Player.SetActive(false);
+        }
+        else if(ghostAction.IsPressed() && ghosting && timerLimit> 0)
+        {
             StartCoroutine(Coroutine);
-            
+        }
+        else if(ghostAction.WasReleasedThisFrame() && ghosting || timerLimit <= 0)
+        {
+            ghosting = false;
+            Player.SetActive(true);
+            if(timerLimit < 0)
+            {
+                StopCoroutine(Coroutine);
+                StartCoroutine(Cooldown);
+            }
+        }
+        else if (!ghostAction.IsPressed())
+        {
+            if(timerLimit <2)
+            {
+            timerLimit += Time.deltaTime;
+            }
         }
         /*
         else if(ghostAction.WasPressedThisFrame() && ghosting)
@@ -48,7 +69,12 @@ public class Ghosting : MonoBehaviour
     private IEnumerator temporizador(float ghostTime)
     {
         yield return new WaitForSeconds(ghostTime);
-        ghosting = false;
-        Player.SetActive(true);
+        timerLimit -= Time.deltaTime;
+    }
+
+    private IEnumerator Recarga(float tempo)
+    {
+        yield return new WaitForSeconds(tempo);
+        timerLimit = 2;
     }
 }

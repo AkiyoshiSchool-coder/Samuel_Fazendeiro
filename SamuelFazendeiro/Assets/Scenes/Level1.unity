@@ -1225,7 +1225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ghosting
   ghosting: 0
-  timer: 2
+  timer: 0.1
+  timerLimit: 2
   InputActions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   Player: {fileID: 1919490877}
 --- !u!54 &981019832
